@@ -1,9 +1,8 @@
-import torch
-from kornia.color import rgb_to_grayscale
-from kornia.feature import *
 import kornia
-from einops.einops import rearrange, repeat
+import torch
 import torch.nn.functional as F
+from einops.einops import rearrange
+from kornia.feature import *
 
 
 def get_laf_pts_to_draw_(LAF: torch.Tensor, img_idx: int = 0):

@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from einops.einops import rearrange, repeat
+from einops.einops import rearrange
 
 from ..functions.quadtree_attention import score_computation_op, value_aggregation_op
 

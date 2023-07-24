@@ -7,7 +7,7 @@ from .backbone import build_backbone
 from .functions.cascade_matching import CascadeMatching
 from .functions.coarse_matching import CoarseMatching
 from .functions.fine_matching import CascadeFineMatching, CascadeFinePreprocess
-from .functions.position_encoding import PESineInterpolation, PositionEncodingSineNorm
+from .functions.position_encoding import PositionEncodingSineNorm
 from .modules.transformer import LocalFeatureTransformer, CascadeFeatureTransformer
 
 

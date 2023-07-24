@@ -2,8 +2,7 @@ import math
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from einops.einops import rearrange, repeat
+from einops.einops import repeat
 from kornia.geometry.subpix import dsnt
 from kornia.utils.grid import create_meshgrid
 

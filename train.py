@@ -5,6 +5,7 @@ import pprint
 from distutils.util import strtobool
 from pathlib import Path
 
+import numpy as np
 import pytorch_lightning as pl
 from loguru import logger as loguru_logger
 from pytorch_lightning.callbacks import ModelCheckpoint, LearningRateMonitor
@@ -18,7 +19,6 @@ from src.lightning.lightning_cascade import PLCascadeMatcher
 from src.lightning.lightning_cascade_refine import PLCascadeRefineMatcher
 from src.utils.misc import get_rank_zero_only_logger, setup_gpus
 from src.utils.profiler import build_profiler
-import numpy as np
 
 loguru_logger = get_rank_zero_only_logger(loguru_logger)
 

@@ -1,14 +1,14 @@
 import torch
-import torch.nn.functional as F
 import torch.nn as nn
+import torch.nn.functional as F
 from einops.einops import rearrange
 
-from .backbone import Ladder_4_2, ResNetFPN_8_4_2
-from src.model.functions.position_encoding import PositionEncodingSineNorm, PositionEncodingSine
-from src.model.modules.transformer import LocalFeatureTransformer, CascadeFeatureTransformer
-from src.model.functions.coarse_matching import CoarseMatching
 from src.model.functions.cascade_matching import CascadeMatching
-from src.model.functions.fine_matching import FineMatching, FinePreprocess, CascadeFinePreprocess, CascadeFineMatching
+from src.model.functions.coarse_matching import CoarseMatching
+from src.model.functions.fine_matching import CascadeFinePreprocess, CascadeFineMatching
+from src.model.functions.position_encoding import PositionEncodingSineNorm
+from src.model.modules.transformer import LocalFeatureTransformer, CascadeFeatureTransformer
+from .backbone import Ladder_4_2, ResNetFPN_8_4_2
 
 
 class identity_with(object):

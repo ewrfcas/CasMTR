@@ -1,9 +1,11 @@
+import math
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from timm.models.layers import DropPath, trunc_normal_
-import math
 from einops.einops import rearrange
+from timm.models.layers import DropPath, trunc_normal_
+
 
 class VITMlp(nn.Module):
     def __init__(self, in_features, hidden_features=None, out_features=None, act_layer=nn.GELU, drop=0.):

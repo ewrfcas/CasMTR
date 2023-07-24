@@ -1,18 +1,18 @@
 import pprint
-from loguru import logger
 from pathlib import Path
 
-import torch
 import numpy as np
 import pytorch_lightning as pl
+import torch
+from loguru import logger
 
 from src.model.quadtree import LoFTR
+from src.utils.comm import gather
 from src.utils.metrics import (
     compute_symmetrical_epipolar_errors,
     compute_pose_errors,
     aggregate_metrics
 )
-from src.utils.comm import gather, all_gather
 from src.utils.misc import lower_config, flattenList
 from src.utils.profiler import PassThroughProfiler
 
@@ -70,7 +70,6 @@ class PLQuadTree(pl.LightningModule):
         return ret_dict, rel_pair_names
 
     def test_step(self, batch, batch_idx):
-        import time
         with self.profiler.profile("LoFTR"):
             # st_time = time.time()
             self.matcher(batch)

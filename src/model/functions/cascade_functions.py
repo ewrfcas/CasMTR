@@ -1,8 +1,8 @@
-import torch
 import fast_score_computation
-from torch.autograd import Function
+import torch
 import torch.nn.functional as F
 from einops.einops import rearrange
+from torch.autograd import Function
 
 
 class ScoreComputation(Function):

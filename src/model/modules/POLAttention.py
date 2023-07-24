@@ -6,8 +6,6 @@
 # Written by Ze Liu, Yutong Lin, Yixuan Wei
 # --------------------------------------------------------
 
-import numpy as np
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

@@ -20,7 +20,7 @@ from src.datasets.sampler import RandomConcatSampler
 from src.datasets.scannet import ScanNetDataset
 from src.utils import comm
 from src.utils.augment import build_augmentor
-from src.utils.dataloader import get_local_split, get_local_split_no_random
+from src.utils.dataloader import get_local_split
 from src.utils.misc import tqdm_joblib
 
 

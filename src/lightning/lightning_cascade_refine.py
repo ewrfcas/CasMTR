@@ -1,14 +1,18 @@
 import collections
+import copy
+import math
+import os
 import pprint
+import shutil
 from collections import defaultdict
 from pathlib import Path
-import os
+
 import numpy as np
 import pytorch_lightning as pl
 import torch
-import shutil
 from loguru import logger
 from matplotlib import pyplot as plt
+from torch.optim.lr_scheduler import LambdaLR
 
 from src.losses.cascade_loss import CascadeLoss
 from src.model.cascade_quadtree_stage3 import CasMTR
@@ -23,9 +27,6 @@ from src.utils.metrics import (
 from src.utils.misc import lower_config, flattenList
 from src.utils.plotting import make_matching_figures
 from src.utils.profiler import PassThroughProfiler
-import math
-import copy
-from torch.optim.lr_scheduler import LambdaLR
 
 
 def torch_init_model(model, total_dict, key, prefix='', rank=0):

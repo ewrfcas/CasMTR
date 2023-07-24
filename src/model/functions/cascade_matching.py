@@ -1,10 +1,9 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from einops.einops import rearrange, repeat
-from .post_processing import PostProcess
+from einops.einops import repeat
 
 from .cascade_functions import *
+from .post_processing import PostProcess
 
 INF = 1e9
 

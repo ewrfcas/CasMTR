@@ -1,12 +1,10 @@
-from typing import Tuple
-
 import cv2
 import numpy as np
 import torch
 
+from configs.default import get_cfg_defaults
 from src.model.cascade_model_stage3 import CasMTR as CasMTR_4c
 from src.model.cascade_model_stage4 import CasMTR as CasMTR_2c
-from configs.default import get_cfg_defaults
 from src.utils.misc import lower_config, load_im_padding
 
 

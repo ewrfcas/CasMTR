@@ -3,14 +3,14 @@ import os
 from itertools import chain
 from typing import Union
 
+import cv2
 import joblib
+import numpy as np
 import torch
+import torchvision.transforms.functional as F
 from loguru import _Logger, logger
 from pytorch_lightning.utilities import rank_zero_only
 from yacs.config import CfgNode as CN
-import numpy as np
-import cv2
-import torchvision.transforms.functional as F
 
 
 def lower_config(yacs_cfg):

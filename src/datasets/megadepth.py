@@ -1,6 +1,5 @@
 import os.path as osp
 
-import torch.nn.functional as F
 from loguru import logger
 from torch.utils.data import Dataset
 

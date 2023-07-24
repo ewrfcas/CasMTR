@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
 
-from .backbone import build_backbone
-from src.model.functions.position_encoding import PositionEncodingSineNorm, PositionEncodingSine
-from src.model.modules.transformer import LocalFeatureTransformer
 from src.model.functions.coarse_matching import CoarseMatching
 from src.model.functions.fine_matching import FineMatching, FinePreprocess
+from src.model.functions.position_encoding import PositionEncodingSineNorm
+from src.model.modules.transformer import LocalFeatureTransformer
+from .backbone import build_backbone
 
 
 class identity_with(object):

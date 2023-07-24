@@ -1,18 +1,15 @@
 import copy
-import math
 
 import torch
-import torch.nn as nn
-from einops.einops import rearrange, repeat
-from timm.models.layers import DropPath, trunc_normal_
+from einops.einops import repeat
+from kornia.utils.grid import create_meshgrid
 
+from src.model.functions.cascade_functions import torch_gather
+from .POLAttention import POLATransBlock
 from .cascade_attention import *
 from .linear_attention import LinearAttention, FullAttention
-from .quadtree_attention import QuadtreeAttention, CascadeQuadtreeAttention
 from .propagations import get_propagations
-from kornia.utils.grid import create_meshgrid
-from src.model.functions.cascade_functions import torch_gather
-from .POLAttention import POLATransBlock, MixAxialPOLABlock
+from .quadtree_attention import QuadtreeAttention, CascadeQuadtreeAttention
 
 
 def relative_position_bucket(relative_position, bidirectional=True, num_buckets=32, max_distance=128):
