@@ -48,8 +48,8 @@ bash scripts/test_scannet.sh
 ```
 python test_single_pair.py --weight_path pretrained_weights/CasMTR-outdoor-4c/pl_checkpoint.ckpt \
                            --config_path configs/model_configs/outdoor/loftr_ds_quadtree_cas_twins_large_stage3.py \
-                           --query_path data/demo_imgs/london_bridge_19481797_2295892421.jpg \
-                           --ref_path data/demo_imgs/london_bridge_49190386_5209386933.jpg \
+                           --query_path assets/demo_imgs/london_bridge_19481797_2295892421.jpg \
+                           --ref_path assets/demo_imgs/london_bridge_49190386_5209386933.jpg \
                            --confidence_thresh 0.5 \
                            --NMS
 ```
@@ -57,10 +57,10 @@ python test_single_pair.py --weight_path pretrained_weights/CasMTR-outdoor-4c/pl
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./data/git_pictures/result_nms.jpg" width = "500" height = "500">
+    src="./assets/git_pictures/result_nms.jpg" width = "350" height = "350">
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./data/git_pictures/result_nonms.jpg" width = "500" height = "500">
+    src="./assets/git_pictures/result_nonms.jpg" width = "350" height = "350">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
