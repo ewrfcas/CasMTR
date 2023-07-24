@@ -57,15 +57,15 @@ python test_single_pair.py --weight_path pretrained_weights/CasMTR-outdoor-4c/pl
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./assets/git_pictures/result_nms.jpg" width = "350" height = "350">
+    src="./assets/git_pictures/result_nms.jpg" width = "300" height = "300">
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./assets/git_pictures/result_nonms.jpg" width = "350" height = "350">
+    src="./assets/git_pictures/result_nonms.jpg" width = "300" height = "300">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Left: with NMS, right: without NMS</div>
+    padding: 2px;">Left: with NMS; Right: without NMS.</div>
 </center>
 
 ## Train
