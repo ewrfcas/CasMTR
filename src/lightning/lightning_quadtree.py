@@ -71,12 +71,8 @@ class PLQuadTree(pl.LightningModule):
 
     def test_step(self, batch, batch_idx):
         with self.profiler.profile("LoFTR"):
-            # st_time = time.time()
-            self.matcher(batch)
-        # torch.cuda.synchronize()
-        # total_times.append(time.time() - st_time)
-        # if len(total_times) > 1:
-        #     print('Match time', np.mean(total_times[1:]))
+            with torch.cuda.amp.autocast():
+                self.matcher(batch)
 
         with self.profiler.profile("RANSAC"):
             ret_dict, rel_pair_names = self._compute_metrics(batch)

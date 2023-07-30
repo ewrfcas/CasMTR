@@ -401,10 +401,11 @@ class PLCascadeRefineMatcher(pl.LightningModule):
 
     def test_step(self, batch, batch_idx):
         with self.profiler.profile("LoFTR"):
-            if self.ema and self.test_ema:
-                self.matcher_ema(batch)
-            else:
-                self.matcher(batch)
+            with torch.cuda.amp.autocast():
+                if self.ema and self.test_ema:
+                    self.matcher_ema(batch)
+                else:
+                    self.matcher(batch)
 
         batch['m_bids'] = batch[f"stage_{self.loftr_cfg['cascade_levels'][-1]}c"]['m_bids']
         batch['mconf'] = batch[f"stage_{self.loftr_cfg['cascade_levels'][-1]}c"]['mconf']

@@ -26,10 +26,10 @@ __global__ void score_computation_forward_kernel(
   torch::PackedTensorAccessor32<long,3,torch::RestrictPtrTraits> index, //B, N1, K
   torch::PackedTensorAccessor32<scalar_t,3,torch::RestrictPtrTraits> output) //B, N1, K
 {
-  int b = blockIdx.x;
-  int n1 = blockIdx.y;
+  int b = blockIdx.y;
+  int n1 = blockIdx.x;
   int k = threadIdx.x;
-  
+
   int D = query.size(2);
 
   int idx = index[b][n1][k];
@@ -50,8 +50,8 @@ std::vector<torch::Tensor> ScoreComputationForward(
     const auto K = index.size(2);
 
     auto output = torch::zeros({B, N1, K},torch::device(torch::kCUDA));
-    
-    dim3 totalBlocks(B, N1);
+
+    dim3 totalBlocks(N1, B);
     dim3 threadsPerBlock(K);
     AT_DISPATCH_FLOATING_TYPES(query.type(), "score_computation_forward_kernel", ([&] {
       score_computation_forward_kernel<scalar_t><<<totalBlocks, threadsPerBlock>>>(
@@ -73,10 +73,10 @@ __global__ void score_computation_backward_kernel(
   torch::PackedTensorAccessor32<scalar_t,3,torch::RestrictPtrTraits> query_grad, //B, N1, dim
   torch::PackedTensorAccessor32<scalar_t,3,torch::RestrictPtrTraits> key_grad //B, N2, dim
   ){
-  int b = blockIdx.x;
-  int n1 = blockIdx.y;
+  int b = blockIdx.y;
+  int n1 = blockIdx.x;
   int k = threadIdx.x;
-  
+
   int D = query.size(2);
 
   int idx = index[b][n1][k];
@@ -103,8 +103,8 @@ std::vector<torch::Tensor> ScoreComputationBackward(
 
     auto query_grad = torch::zeros({B, N1, D},torch::device(torch::kCUDA));
     auto key_grad = torch::zeros({B, N2, D},torch::device(torch::kCUDA));
-   
-    dim3 totalBlocks(B, N1);
+
+    dim3 totalBlocks(N1, B);
     dim3 threadsPerBlock(K);
     
     AT_DISPATCH_FLOATING_TYPES(key.type(), "score_computation_backward_kernel", ([&] {
