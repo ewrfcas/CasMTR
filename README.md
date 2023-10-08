@@ -100,11 +100,11 @@ bash scripts/train_scannet-4c.sh
 If you found our project helpful, please consider citing:
 
 ```
-@article{cao2023improving,
-  title={Improving Transformer-based Image Matching by Cascaded Capturing Spatially Informative Keypoints},
-  author={Cao, Chenjie and Fu, Yanwei},
-  journal={arXiv preprint arXiv:2303.02885},
-  year={2023}
+@inproceedings{cao2023improving,
+      title={Improving Transformer-based Image Matching by Cascaded Capturing Spatially Informative Keypoints},
+      author={Cao, Chenjie and Fu, Yanwei},
+      booktitle={Proceedings of the IEEE/CVF international conference on computer vision},
+      year={2023}
 }
 ```
 
