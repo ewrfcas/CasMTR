@@ -27,7 +27,7 @@ cd cuda_imp/score_cuda&&python setup.py install
 
 Following [LoFTR](https://github.com/zju3dv/LoFTR/blob/master/docs/TRAINING.md) for more details about the dataset downloading and index settings.
 
-As D2-Net no longer supplies undistorted images, we have uploaded the processed images to this [Link](https://pan.quark.cn/s/3821f8e563f8) for easy access.
+As D2-Net no longer supplies undistorted images, we have uploaded the processed images to this [Link](https://huggingface.co/ewrfcas/CasMTR/resolve/main/Undistorted_SfM.tar) for easy access.
 
 ## Inference
 
